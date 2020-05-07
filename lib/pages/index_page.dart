@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../constant.dart';
 import 'package:flutter_screenutil/screenutil.dart';
 import 'package:flutter/cupertino.dart';
+import 'found_page/index_page.dart';
 
 class IndexPage extends StatelessWidget {
   IndexPage({Key key}) : super(key: key);
@@ -10,8 +11,17 @@ class IndexPage extends StatelessWidget {
 
   final List<BottomNavigationBarItem> bottomItems = [
     BottomNavigationBarItem(
-      icon: Icon(CupertinoIcons.music_note),
-      title: Text('发现')
+      icon: Column(
+        children: <Widget>[
+          Icon(CupertinoIcons.music_note, color: AppPrimaryColor),
+          Text('发现', style: TextStyle(color: AppPrimaryColor),)
+        ],
+      ),
+      title: SizedBox(
+        height: 0,
+        width: 0,
+      ),
+      // activeIcon: Icon(CupertinoIcons.video_camera)
     ),
     BottomNavigationBarItem(
       icon: Icon(CupertinoIcons.video_camera),
@@ -43,15 +53,8 @@ class IndexPage extends StatelessWidget {
         items: bottomItems,
         type: BottomNavigationBarType.fixed,
       ),
-      // appBar: AppBar(),
       body: Container(
-        padding: EdgeInsets.only(right: 10.0, left: 10.0),
-        decoration: BoxDecoration(
-          color: AppPrimaryBgColor
-        ),
-        child: Center(
-          child: Text('首页'),
-        ),
+        child: FoundPage()
       ),
     );
   }

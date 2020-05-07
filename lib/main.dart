@@ -13,7 +13,11 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primaryColor: AppPrimaryColor,
+          primaryColor:  Colors.white,
+          brightness: Brightness.light,
+          splashColor: Colors.transparent,
+          highlightColor: Colors.transparent
+          // tooltipTheme: TooltipThemeData(verticalOffset: -100000))
         ),
         home: IndexPage(),
       ),
