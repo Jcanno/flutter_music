@@ -14,33 +14,33 @@ class FoundPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: PreferredSize(
-        child: AppBar(
-          elevation: 0,
-        ),
-        preferredSize: Size.zero,
-      ),
-      body: FutureBuilder(
-        future: _getBanner(),
-        builder: (context, snapshot) {
-          if(snapshot.hasData) {
-            return SafeArea(
-              child: Column(
-                children: <Widget>[
-                  _topbar(),
-                  SwiperDiy(
-                    list: list,
-                  )
-                ],
+    return FutureBuilder(
+      future: _getBanner(),
+      builder: (context, snapshot) {
+        if(snapshot.hasData) {
+          return Scaffold(
+            appBar: PreferredSize(
+              child: AppBar(
+                elevation: 0,
               ),
-            );
-          }else {
-            return Text('正在加载');
-          }
-          
-        },
-      )      
+              preferredSize: Size.zero,
+            ),
+            body: SafeArea(
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Column(
+                  children: <Widget>[
+                    _topbar(),
+                    SwiperDiy(list: list),
+                  ],
+                ),
+              )
+            ),
+          );
+        }else {
+          return Center(child: Text('正在加载'),);
+        }
+      },
     );
   }
 
