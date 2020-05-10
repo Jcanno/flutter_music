@@ -41,7 +41,6 @@ class Banners {
   Null adLocation;
   String encodeId;
   Null event;
-  Null video;
   Null dynamicVideoData;
   String bannerId;
   Null alg;
@@ -72,7 +71,6 @@ class Banners {
       this.adLocation,
       this.encodeId,
       this.event,
-      this.video,
       this.dynamicVideoData,
       this.bannerId,
       this.alg,
@@ -103,7 +101,6 @@ class Banners {
     adLocation = json['adLocation'];
     encodeId = json['encodeId'];
     event = json['event'];
-    video = json['video'];
     dynamicVideoData = json['dynamicVideoData'];
     bannerId = json['bannerId'];
     alg = json['alg'];
@@ -136,7 +133,6 @@ class Banners {
     data['adLocation'] = this.adLocation;
     data['encodeId'] = this.encodeId;
     data['event'] = this.event;
-    data['video'] = this.video;
     data['dynamicVideoData'] = this.dynamicVideoData;
     data['bannerId'] = this.bannerId;
     data['alg'] = this.alg;

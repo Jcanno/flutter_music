@@ -16,6 +16,7 @@ class SwiperDiy extends StatelessWidget {
       return Container(
         padding: const EdgeInsets.only(top: 10),
         height: ScreenUtil().setHeight(250),
+        width: ScreenUtil().setWidth(750),
         child: Swiper(
           itemBuilder: (BuildContext context, int index) {
             return Container(
@@ -37,11 +38,17 @@ class SwiperDiy extends StatelessWidget {
           autoplay: true,
           pagination: SwiperPagination(
             builder: DotSwiperPaginationBuilder(
-              color: Colors.black38,
-              activeColor: AppPrimaryColor
+              color: Colors.white70,
+              activeColor: AppPrimaryColor,
+              size: 8.0
             )
           ),
         ),
+      );
+    }else {
+      return Container(
+        height: ScreenUtil().setHeight(250),
+        width: ScreenUtil().setWidth(750),
       );
     }
   }
