@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_music/model/swiperModel.dart';
+import '../../widgets/found/topnav_widget.dart';
 import 'package:flutter_screenutil/screenutil.dart';
-import '../../widgets/swiper_widget.dart';
+import '../../widgets/found/swiper_widget.dart';
 import 'package:flutter/cupertino.dart';
 import '../../api/found.dart';
 import 'dart:io';
@@ -32,6 +33,7 @@ class FoundPage extends StatelessWidget {
                   children: <Widget>[
                     _topbar(),
                     SwiperDiy(list: list),
+                    TopNav(),
                   ],
                 ),
               )
@@ -86,4 +88,6 @@ class FoundPage extends StatelessWidget {
       )
     );
   }
+
+  
 }
